@@ -1,0 +1,52 @@
+{
+  "name": "namste-react",
+  "version": "1.0.0",
+  "description": "THis is Namste React by Raja kumar",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajabca04/Namste-React.git"
+  },
+  "keywords": [
+    "react",
+    "namste",
+    "react",
+    "raja",
+    "kumar"
+  ],
+  "author": "Raja Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rajabca04/Namste-React/issues"
+  },
+  "homepage": "https://github.com/rajabca04/Namste-React#readme",
+  "dependencies": {
+    "lightningcss-win32-x64-msvc": "^1.21.5",
+    "parcel": "^2.9.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "process": "^0.11.10"
+  },
+  "browserslist": [
+    "last 2 Chrome version",
+    "last 2 Firefox version",
+    "last 2 Safari version",
+    "last 2 Edge version",
+    "last 2 Opera version",
+    "last 2 ChromeAndroid version",
+    "last 2 FirefoxAndroid version",
+    "last 2 SafariAndroid version",
+    "last 2 EdgeAndroid version",
+    "last 2 OperaAndroid version",
+    "last 2 ChromeiOS version",
+    "last 2 FirefoxiOS version",
+    "last 2 SafariiOS version",
+    "last 2 EdgeiOS version",
+    "last 2 OperaiOS version",
+    "last 2 version"
+  ]
+}
