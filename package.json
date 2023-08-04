@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "THis is Namste React by Raja kumar",
   "scripts": {
+    "start": "parcel index.html", 
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
@@ -39,7 +41,6 @@
     "last 2 Opera version",
     "last 2 ChromeAndroid version",
     "last 2 FirefoxAndroid version",
-    "last 2 SafariAndroid version",
     "last 2 EdgeAndroid version",
     "last 2 OperaAndroid version",
     "last 2 ChromeiOS version",
