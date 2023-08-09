@@ -3,6 +3,7 @@ import RestaurantCard from "./RestaurantCard"
 
 import countryCode from "../utils/mock_data"
 const Body = ()=>{
+    
     return(
       <div className="body"> 
         <div className="Search">Search</div>
