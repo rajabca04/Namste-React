@@ -33,10 +33,9 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 5px;
     border-radius: 10px;
     /* background-color: rgba(1, 91, 91, 0.826); */
- 
-
 }
 .Search{
     margin-top: 10px    ;
