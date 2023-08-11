@@ -5,7 +5,6 @@ export const Header = ()=>{
         <div className="logo">
           <img className="logo-img" src={CDN_url}/>
         </div>
-  
         <div className="nav-items">
           <ul>
             <li>Home </li>
