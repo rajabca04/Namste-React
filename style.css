@@ -1,21 +1,32 @@
 *{
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+        
 }
 .header{
     justify-content: space-between;
     display: flex;
     border-bottom: 1px solid black;
 }
+.logo{
+    display: flex;
+}
+.logo>h1{
+    font-size: 28px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif    ;
+    color:#009688;
+    margin-top: 32px;
+    margin-left: -18px;
+}
 .logo-img{
     width: 100px;
     height:100px;
 }
 .nav-items > ul{
- 
-    
+    margin-right: 40px;
+    color:#009688;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 20px;
     display: flex;
     list-style-type: none;
 }
@@ -23,11 +34,14 @@
     padding: 10px;
     margin: 10px;
 }
+.Res-container{
+    margin-left: 5%;
+}
 .restaurant-card{
     border: 1px solid rgb(40, 149, 238);
     margin: 10px;
     width: 200px;
-    height: 240px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -35,6 +49,8 @@
     text-align: center;
     padding: 5px;
     border-radius: 10px;
+    cursor: pointer;
+    
     /* background-color: rgba(1, 91, 91, 0.826); */
 }
 .Search{
@@ -43,8 +59,7 @@
     border-radius: 10px;
     width: 500px;
     padding: 5px;
-    border: 1px solid black;
-    
+    border: 1px solid rgb(0, 148, 133);
 }
 .restaurant-card:hover{
     cursor: pointer;
@@ -54,24 +69,33 @@
 .Res-container{
     display: flex;
     flex-wrap: wrap;
-    
-    
+
 }
 
+.filter{
+    margin-left: 5%;
+}
 .filter-btn{
     width: 150px;
-    height: 30px;
-    border: 1px solid black;    
-    border-radius: 10px;
-    background-color: rgba(1, 91, 91, 0.826);
+    height: 40px;
+    border: 1px solid rgb(0, 148, 133);    
+    border-radius: 5px;
+    background-color: rgba(149, 9, 159, 0.993);
     color: white;
     cursor: pointer;
     margin: 10px;
+    font-weight: bolder;
+    font-size: 16px;
+    
 }
 .res-card-img > img{
     border-radius: 10px;
 }
 
+.devider{
+    color:rgb(40, 149, 238);
+    
+}
  /* responsive */
 @media screen and (max-width: 768px) {
     .header{
@@ -81,6 +105,28 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+    }
+    
+}
+
+
+.typingEffact{
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 2s steps(20, end);
+    animation-iteration-count: infinite;
+    text-shadow: 0 0 2px #515150, 0 0 3px #ff00ff;
+    color:#009688;
+
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
     }
     
 }

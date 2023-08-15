@@ -1,4 +1,4 @@
-let restroData = [
+const restroData = [
   {
     "id": "0",
     "delevryTime": "30",

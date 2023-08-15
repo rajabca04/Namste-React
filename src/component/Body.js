@@ -1,44 +1,37 @@
 
 import RestaurantCard from "./RestaurantCard";
-
 import restroData from "../utils/mock_data";
+import { useState, useEffect } from "react";
+
+import {useState} from "react";
 const Body = ()=>{
-    
-  // let conData = [
-  //   {
-  //   "countryId": 1,
-  //   "name": "India",
-  //   "isdCode": "91",
-  //   "alpha2Code": "IN",
-  //   "alpha3Code": "IND",
-  //   "isoCurrencyCode": "INR",
-  //   "flagImgUrl": "https://b.zmtcdn.com/images/flags_z10/in.png?output-format=webp"
-  //   },
-  //   {
-  //   "countryId": 2,
-  //   "name": "Afghanistan",
-  //   "isdCode": "93",
-  //   "alpha2Code": "AF",
-  //   "alpha3Code": "AFG",
-  //   "isoCurrencyCode": "AFN",
-  //   "flagImgUrl": "https://b.zmtcdn.com/images/flags_z10/af.png?output-format=webp"
-  //   }
-  // ]
+  const [allRestroData,setAllRestroData] = useState(restroData);
+
+  console.log("Body rendered");
+
+  useEffect(()=>{
+    console.log("UseEffect called");
+  },[]);
+
+
+
     return(
       <div className="body"> 
         <div className="filter">
-          {/* <button className="filter-btn" onClick={
+          <button className="filter-btn" onClick={
             ()=>{
-              countryCode = countryCode.filter((res)=> res.isdCode<100);
-              console.log(countryCode);
+              const filteredRestroData = restroData.filter((res)=> res.rating>4 && res.delevryTime<30);
+              setAllRestroData(filteredRestroData)
+              console.log(filteredRestroData);
             }
-          }>Top countryCode</button> */}
-          
+            
+          }>Top Restrorents</button>
+      
         </div>
         <div className="Res-container">
-          {restroData.map((res)=>{
+          {allRestroData.map((res)=>{
             return(
-              <RestaurantCard resImg={res.cloudinaryImageId} resName={res.name} rating={res.rating} delevryTime={res.delevryTime}/>
+              <RestaurantCard key={res.id} resImg={res.cloudinaryImageId} resName={res.name} rating={res.rating} delevryTime={res.delevryTime}/>
             )
           })}
         </div>
