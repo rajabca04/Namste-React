@@ -130,3 +130,16 @@
     }
     
 }
+
+.filter-btn-2{
+    width: 150px;
+    height: 40px;
+    border: 1px solid rgb(0, 148, 133);    
+    border-radius: 5px;
+    background-color: rgba(8, 145, 231, 0.993);
+    color: white;
+    cursor: pointer;
+    margin: 10px;
+    font-weight: bolder;
+    font-size: 16px;
+}
