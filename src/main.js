@@ -4,7 +4,6 @@
 //     id: "main-heading",
 // }, "Hello World from React!");
 
-
 // const parent = React.createElement("div", { id: "parent" }, [
 //   React.createElement("div", { id: "child1" }, [
 //     React.createElement("h1", {}, " h1 Hello i am raja calling form child"),
@@ -42,7 +41,7 @@
 // we can also say it is component composition...
 // const Component = () => (
 //   <div>
-    
+
 //     <h1>This is functional component of react 🚀</h1>
 //     {Title()}
 //     <Title />
@@ -55,10 +54,13 @@ import React from "react";
 
 import ReactDOM from "react-dom/client";
 
-import Header from "./component/header";
-
+import Header from "./component/Header";
+import Contact from "./component/Contact";
+import Cart from "./component/Cart";
 import Body from "./component/Body";
-
+import Error from "./component/Error";
+import About from "./component/About";
+import { createBrowserRouter, RouterProvider , Outlet } from "react-router-dom";
 /**
  * Header
  * - Logo
@@ -76,17 +78,44 @@ import Body from "./component/Body";
  * - Contact
  */
 
-
-
-
-const AppLayout = ()=>{
-  return(
+const AppLayout = () => {
+  return (
     <div className="app">
       <Header />
-      <Body />
+      <Outlet/>
     </div>
-  )
-}
+  );
+};
+
+// Confrigration for routing.
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Body/>
+      },
+      {
+        path: "/about",
+        element: <About />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
+        errorElement: <Error />,
+      }
+    ],
+    errorElement: <Error />,
+  },
+]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<AppLayout />);
+root.render(<RouterProvider router={appRouter} />);
