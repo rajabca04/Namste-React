@@ -1,34 +1,35 @@
 import RestaurantCard from "./RestaurantCard";
-// import restroData from "../utils/mock_data";
 import { useState, useEffect } from "react";
-
 const Body = () => {
   const [allRestroData, setAllRestroData] = useState([]);
-  // const [allData, setAllData] = useState([]);
   console.log(allRestroData);
-
   useEffect(() => {
     fetchData();
   }, []);
-
   const fetchData = async () => {
-    const data = await fetch(
-      // https://corsproxy.io/?
-      "https://www.swiggy.com/mapi/homepage/getCards?lat=28.637278&lng=77.2259488"
-    );
-    const json = await data.json();
-
-    console.log(json.data.success.cards[4].gridWidget.gridElements.infoWithStyle.restaurants)
-    // Optional chaning.
-    setAllRestroData(
-      json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle
-        ?.restaurants
-    );
-
-    // setAllData(
-    //   json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    // );
+    try {
+      const response = await fetch(
+        // https://corsproxy.io/?
+        "https://www.swiggy.com/mapi/homepage/getCards?lat=28.637278&lng=77.2259488"
+      );
+      if (!response.ok) {
+        throw new Error(`Network response was not ok: ${response.status}`);
+      }
+  
+      const json = await response.json();
+      console.log(json)
+  
+      // Optional chaining.
+      setAllRestroData(
+        json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle
+          ?.restaurants
+      );
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      // You might want to handle the error or log it accordingly.
+    }
   };
+  
 
   if (allRestroData.length === 0) {
     return <h1>Loading...</h1>;
@@ -47,7 +48,6 @@ const Body = () => {
         >
           Top Restrorents
         </button>
-
         <button
           className="filter-btn-2"
           onClick={() => {
@@ -60,14 +60,6 @@ const Body = () => {
         >
           Fast delavry
         </button>
-        {/* <button
-          className="filter-btn-2"
-          onClick={() => {
-            setAllRestroData(allData);
-          }}
-        >
-          All
-        </button> */}
       </div>
       <div className="Res-container">
         {allRestroData.map((res) => {

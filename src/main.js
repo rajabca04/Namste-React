@@ -61,6 +61,7 @@ import Body from "./component/Body";
 import Error from "./component/Error";
 import About from "./component/About";
 import { createBrowserRouter, RouterProvider , Outlet } from "react-router-dom";
+import RestaurantMenu from "./component/RestaurantMenu";
 /**
  * Header
  * - Logo
@@ -95,7 +96,8 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Body/>
+        element: <Body/>,
+        errorElement: <Error />,
       },
       {
         path: "/about",
@@ -111,7 +113,13 @@ const appRouter = createBrowserRouter([
         path: "/cart",
         element: <Cart />,
         errorElement: <Error />,
+      },
+      {
+        path: "/restaurant/:resid",
+        element: <RestaurantMenu/>,
+        errorElement: <Error/>
       }
+
     ],
     errorElement: <Error />,
   },
@@ -119,3 +127,4 @@ const appRouter = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(<RouterProvider router={appRouter} />);
+

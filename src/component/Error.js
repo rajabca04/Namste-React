@@ -10,6 +10,8 @@ const Error = ()=>{
             <span>{err.status}</span>
             <br />
             <p>{err.statusText}</p>
+            <span>{err.message}</span>
+
         </div>
 
     )
